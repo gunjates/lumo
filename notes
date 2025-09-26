@@ -1,0 +1,32 @@
+Create a backend folder manually (keeps things separate from Angular).
+
+mkdir backend && cd backend
+
+
+Create a virtual environment (best practice).
+
+python -m venv venv
+source venv/bin/activate on mac   
+venv\Scripts\activate on Windows
+
+
+Install dependencies inside venv.
+
+pip install django djangorestframework psycopg2 pymongo
+
+
+Start Django project inside this folder.
+
+django-admin startproject core .
+
+
+(notice the . at the end → it puts Django’s files directly in backend/ instead of creating another subfolder).
+
+Create Django App for APIs
+python manage.py startapp api
+
+Run Server
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+

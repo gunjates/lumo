@@ -1,17 +1,11 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# Compiled output
+# Frontend (Angular) ignores
 /dist
 /tmp
 /out-tsc
 /bazel-out
-
-# Node
 /node_modules
 npm-debug.log
 yarn-error.log
-
-# IDEs and editors
 .idea/
 .project
 .classpath
@@ -19,16 +13,12 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
-
-# Visual Studio Code
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
-
-# Miscellaneous
 /.angular/cache
 .sass-cache/
 /connect.lock
@@ -36,7 +26,40 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-
-# System files
 .DS_Store
 Thumbs.db
+
+# Backend (Django/Python) ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothesis
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+*.sqlite3
+.env
+.env.local
+.env.production
+logs/
+Thumbs.db
+.DS_Store

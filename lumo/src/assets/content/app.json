@@ -1,0 +1,26 @@
+{
+  "app": {
+    "name": "Lumo",
+    "title": "Lumo E-commerce",
+    "description": "Your Ultimate E-commerce Experience",
+    "version": "1.0.0",
+    "favicon": "assets/logo.png"
+  },
+  "theme": {
+    "primaryColor": "#667eea",
+    "secondaryColor": "#764ba2",
+    "accentColor": "#ff6b6b",
+    "successColor": "#10b981",
+    "warningColor": "#f59e0b",
+    "errorColor": "#ef4444"
+  },
+  "api": {
+    "baseUrl": "http://localhost:8000/api",
+    "timeout": 30000
+  },
+  "features": {
+    "enablePWA": false,
+    "enableAnalytics": false,
+    "enableErrorReporting": true
+  }
+}
