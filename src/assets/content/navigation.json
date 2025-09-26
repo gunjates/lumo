@@ -1,0 +1,48 @@
+{
+  "brand": {
+    "name": "Lumo",
+    "logo": {
+      "url": "/assets/logo.png",
+      "alt": "Lumo Logo"
+    }
+  },
+  "menuItems": [
+    {
+      "text": "Home",
+      "route": "/",
+      "icon": "home"
+    },
+    {
+      "text": "Products",
+      "route": "/products",
+      "icon": "shopping-bag"
+    },
+    {
+      "text": "Cart",
+      "route": "/cart",
+      "icon": "shopping-cart"
+    },
+    {
+      "text": "Login",
+      "route": "/auth/login",
+      "icon": "user"
+    }
+  ],
+  "footer": {
+    "copyright": "© 2024 Lumo. All rights reserved.",
+    "links": [
+      {
+        "text": "About",
+        "route": "/about"
+      },
+      {
+        "text": "Contact",
+        "route": "/contact"
+      },
+      {
+        "text": "Privacy Policy",
+        "route": "/privacy"
+      }
+    ]
+  }
+}

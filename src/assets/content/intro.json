@@ -1,0 +1,41 @@
+{
+  "pageTitle": "Welcome to Lumo",
+  "subtitle": "Your Ultimate E-commerce Experience",
+  "description": "Discover amazing products, enjoy seamless shopping, and experience the future of online retail. From fashion to electronics, we've got everything you need at unbeatable prices.",
+  "backgroundImage": {
+    "url": "/assets/shopping-intro.png",
+    "alt": "Shopping Introduction"
+  },
+  "buttons": {
+    "primary": {
+      "text": "Sign In",
+      "route": "/auth/login",
+      "icon": "",
+      "style": "primary"
+    },
+    "secondary": {
+      "text": "Browse Products",
+      "route": "/products",
+      "icon": "",
+      "style": "secondary"
+    }
+  },
+  "branding": {
+    "logo": {
+      "url": "/assets/logo.png",
+      "alt": "Lumo Logo"
+    },
+    "fullLogo": {
+      "url": "/assets/logo full.png",
+      "alt": "Lumo Full Logo"
+    }
+  },
+  "animations": {
+    "fadeInDelay": {
+      "title": "0s",
+      "subtitle": "0.2s",
+      "description": "0.4s",
+      "buttons": "0.6s"
+    }
+  }
+}

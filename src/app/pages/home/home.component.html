@@ -1,0 +1,94 @@
+<!-- Home Page Component -->
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to Lumo</h1>
+      <p class="hero-subtitle">Discover amazing products at unbeatable prices</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" routerLink="/products">Shop Now</button>
+        <button class="btn btn-outline">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/600x400" alt="Hero Image" class="hero-img">
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="categories-grid">
+        <div class="category-card" *ngFor="let category of categories">
+          <div class="category-icon">{{ category.icon }}</div>
+          <h3 class="category-name">{{ category.name }}</h3>
+          <p class="category-count">{{ category.count }} products</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="featured-products">
+    <div class="container">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="products-grid">
+        <div class="product-card" *ngFor="let product of featuredProducts">
+          <div class="product-image">
+            <img [src]="product.image" [alt]="product.name" class="product-img">
+            <div class="product-badge">Featured</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">{{ product.name }}</h3>
+            <div class="product-rating">
+              <div class="stars">
+                <span *ngFor="let star of [1,2,3,4,5]" class="star" 
+                      [class.filled]="star <= product.rating">
+                  ★
+                </span>
+              </div>
+              <span class="rating-text">{{ product.rating }} ({{ product.reviews }} reviews)</span>
+            </div>
+            <div class="product-price">${{ product.price }}</div>
+            <button class="btn btn-primary btn-small">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="section-actions">
+        <button class="btn btn-outline" routerLink="/products">View All Products</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose Lumo?</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🚚</div>
+          <h3 class="feature-title">Free Shipping</h3>
+          <p class="feature-description">Free shipping on orders over $50</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <h3 class="feature-title">Secure Payment</h3>
+          <p class="feature-description">Your payment information is safe and secure</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">↩️</div>
+          <h3 class="feature-title">Easy Returns</h3>
+          <p class="feature-description">30-day return policy for all products</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💬</div>
+          <h3 class="feature-title">24/7 Support</h3>
+          <p class="feature-description">Round-the-clock customer support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+

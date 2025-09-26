@@ -1,0 +1,409 @@
+// Input Component Styles
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+
+  // Sizes
+  &.input-sm {
+    .input-label {
+      font-size: 0.875rem;
+    }
+
+    .input {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      min-height: 2rem;
+    }
+
+    .input-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.input-md {
+    .input-label {
+      font-size: 0.875rem;
+    }
+
+    .input {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      min-height: 2.5rem;
+    }
+
+    .input-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.input-lg {
+    .input-label {
+      font-size: 1rem;
+    }
+
+    .input {
+      padding: 1rem 1.25rem;
+      font-size: 1.125rem;
+      min-height: 3rem;
+    }
+
+    .input-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  // Variants
+  &.input-default {
+    .input-wrapper {
+      border: 1px solid #d1d5db;
+      background: white;
+
+      &:focus-within {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+    }
+  }
+
+  &.input-filled {
+    .input-wrapper {
+      border: 1px solid transparent;
+      background: #f9fafb;
+
+      &:focus-within {
+        background: white;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+    }
+  }
+
+  &.input-outlined {
+    .input-wrapper {
+      border: 2px solid #d1d5db;
+      background: transparent;
+
+      &:focus-within {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+    }
+  }
+
+  // States
+  &.input-disabled {
+    .input-label {
+      color: #9ca3af;
+    }
+
+    .input-wrapper {
+      background: #f3f4f6;
+      border-color: #e5e7eb;
+      cursor: not-allowed;
+    }
+
+    .input {
+      color: #9ca3af;
+      cursor: not-allowed;
+    }
+  }
+
+  &.input-error-state {
+    .input-wrapper {
+      border-color: #ef4444;
+
+      &:focus-within {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+      }
+    }
+  }
+}
+
+.input-label {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+
+  .input-required {
+    color: #ef4444;
+    margin-left: 0.25rem;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+
+  &.input-with-icon-left {
+    .input {
+      padding-left: 2.5rem;
+    }
+  }
+
+  &.input-with-icon-right {
+    .input {
+      padding-right: 2.5rem;
+    }
+  }
+
+  &.input-clearable {
+    .input {
+      padding-right: 2.5rem;
+    }
+  }
+
+  &.input-error {
+    border-color: #ef4444;
+
+    &:focus-within {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+  }
+
+  &.input-disabled {
+    background: #f3f4f6;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #111827;
+  font-family: inherit;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:disabled {
+    color: #9ca3af;
+    cursor: not-allowed;
+  }
+
+  &.input-textarea {
+    resize: vertical;
+    min-height: 80px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.input-icon-left,
+.input-icon-right {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  z-index: 1;
+}
+
+.input-icon-left {
+  pointer-events: none;
+}
+
+.input-icon-right {
+  pointer-events: auto;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #667eea;
+  }
+}
+
+.input-icon-left {
+  left: 0.75rem;
+}
+
+.input-icon-right {
+  right: 0.75rem;
+}
+
+.input-icon {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.input-clear {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+  z-index: 2;
+
+  &:hover {
+    color: #374151;
+    background: #f3f4f6;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.input-message {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+
+  &.input-hint {
+    color: #6b7280;
+  }
+
+  &.input-error {
+    color: #ef4444;
+  }
+}
+
+// Dark theme
+.dark {
+  .input-container {
+    &.input-default {
+      .input-wrapper {
+        border-color: #374151;
+        background: #1f2937;
+
+        &:focus-within {
+          border-color: #a78bfa;
+          box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+        }
+      }
+    }
+
+    &.input-filled {
+      .input-wrapper {
+        background: #111827;
+
+        &:focus-within {
+          background: #1f2937;
+          border-color: #a78bfa;
+          box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+        }
+      }
+    }
+
+    &.input-outlined {
+      .input-wrapper {
+        border-color: #374151;
+
+        &:focus-within {
+          border-color: #a78bfa;
+          box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+        }
+      }
+    }
+
+    &.input-disabled {
+      .input-label {
+        color: #6b7280;
+      }
+
+      .input-wrapper {
+        background: #111827;
+        border-color: #374151;
+      }
+
+      .input {
+        color: #6b7280;
+      }
+    }
+  }
+
+  .input-label {
+    color: #f9fafb;
+  }
+
+  .input {
+    color: #f9fafb;
+
+    &::placeholder {
+      color: #6b7280;
+    }
+  }
+
+  .input-icon-left,
+  .input-icon-right {
+    color: #9ca3af;
+  }
+
+  .input-clear {
+    color: #9ca3af;
+
+    &:hover {
+      color: #d1d5db;
+      background: #374151;
+    }
+  }
+
+  .input-message {
+    &.input-hint {
+      color: #9ca3af;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .input-container {
+    &.input-lg {
+      .input {
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+        min-height: 2.75rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .input-container {
+    &.input-md {
+      .input {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.875rem;
+        min-height: 2.25rem;
+      }
+    }
+
+    &.input-lg {
+      .input {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.875rem;
+        min-height: 2.5rem;
+      }
+    }
+  }
+}

@@ -1,18 +1,77 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { IntroComponent } from './components/intro/intro.component';
+import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+import { ImageTestComponent } from './components/image-test/image-test.component';
+import { ComponentsDemoComponent } from './components/components-demo/components-demo.component';
+import { SigninComponent } from './components/auth/signin/signin.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+// Export routes for standalone bootstrap
+export const routes: Routes = [
+  {
+    path: '',
+    component: IntroComponent
+  },
+  {
+    path: 'test',
+    component: ImageTestComponent
+  },
+  {
+    path: 'components',
+    component: ComponentsDemoComponent
+  },
+  {
+    path: 'products',
+    component: PlaceholderComponent
+  },
+  {
+    path: 'cart',
+    component: PlaceholderComponent
+  },
+      {
+        path: 'auth',
+        children: [
+          {
+            path: 'login',
+            component: SigninComponent
+          },
+          {
+            path: 'signin',
+            component: SigninComponent
+          },
+          {
+            path: 'signup',
+            component: SignupComponent
+          },
+          {
+            path: '',
+            redirectTo: 'login',
+            pathMatch: 'full'
+          }
+        ]
+      },
+  {
+    path: 'profile',
+    component: PlaceholderComponent
+  },
+  {
+    path: 'admin',
+    component: PlaceholderComponent
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  }
+];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [RouterModule.forRoot(routes, {
+    enableTracing: false,
+    scrollPositionRestoration: 'top',
+    anchorScrolling: 'enabled',
+    onSameUrlNavigation: 'reload'
+  })],
+  exports: [RouterModule]
 })
-export class AppModule { }
+export class AppRoutingModule { }

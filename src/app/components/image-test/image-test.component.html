@@ -1,0 +1,37 @@
+<!-- Image Test Component -->
+<div class="image-test-container">
+  <h2>Image Loading Test</h2>
+  
+  <!-- Test 1: Direct img tag -->
+  <div class="test-section">
+    <h3>Direct img tag:</h3>
+    <img src="/assets/logo.png" alt="Logo" style="width: 100px; height: 100px; border: 2px solid red;">
+    <p>Logo should be visible above</p>
+  </div>
+  
+  <!-- Test 2: Background image with CSS -->
+  <div class="test-section">
+    <h3>Background image with CSS:</h3>
+    <div style="width: 300px; height: 200px; background-image: url('/assets/shopping-venture-1080967.jpg'); background-size: cover; background-position: center; border: 2px solid blue;"></div>
+    <p>Background image should be visible above</p>
+  </div>
+  
+  <!-- Test 3: Background image with Angular binding -->
+  <div class="test-section">
+    <h3>Background image with Angular binding:</h3>
+    <div [style.background-image]="'url(/assets/shopping-venture-1080967.jpg)'" 
+         style="width: 300px; height: 200px; background-size: cover; background-position: center; border: 2px solid green;"></div>
+    <p>Background image with Angular binding should be visible above</p>
+  </div>
+  
+  <!-- Test 4: All available images -->
+  <div class="test-section">
+    <h3>All available images:</h3>
+    <div class="image-grid">
+      <div *ngFor="let image of images" class="image-item">
+        <img [src]="image.url" [alt]="image.alt" style="width: 150px; height: 100px; object-fit: cover; border: 1px solid #ccc;">
+        <p>{{ image.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>

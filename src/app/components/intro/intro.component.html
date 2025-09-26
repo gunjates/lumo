@@ -1,0 +1,49 @@
+<!-- Introduction/Landing Page -->
+<div class="intro-container" *ngIf="introContent$ | async as content">
+  <!-- Background Image -->
+  <div class="background-image" [style.background-image]="'url(' + content.backgroundImage.url + ')'">
+    <div class="overlay"></div>
+  </div>
+  
+
+  <!-- Content -->
+  <div class="intro-content">
+    <div class="intro-text">
+      <h1 class="intro-title" [style.animation-delay]="content.animations.fadeInDelay.title">
+        {{ content.pageTitle }}
+      </h1>
+      <p class="intro-subtitle" [style.animation-delay]="content.animations.fadeInDelay.subtitle">
+        {{ content.subtitle }}
+      </p>
+      <p class="intro-description" [style.animation-delay]="content.animations.fadeInDelay.description">
+        {{ content.description }}
+      </p>
+      
+      <!-- Call to Action Buttons -->
+      <div class="intro-actions" [style.animation-delay]="content.animations.fadeInDelay.buttons">
+        <app-button
+          [text]="content.buttons.primary.text"
+          [routerLink]="content.buttons.primary.route"
+          variant="primary"
+          size="lg"
+          [icon]="content.buttons.primary.icon"
+          [iconSize]="'20'"
+        ></app-button>
+        
+        <app-button
+          [text]="content.buttons.secondary.text"
+          [routerLink]="content.buttons.secondary.route"
+          variant="secondary"
+          size="lg"
+          [icon]="content.buttons.secondary.icon"
+          [iconSize]="'20'"
+        ></app-button>
+      </div>
+    </div>
+    
+    <!-- Intro Image -->
+    <div class="intro-image">
+      <img src="../../../assets/shopping-intro.png" alt="Lumo intro" class="intro-logo">
+    </div>
+  </div>
+</div>
